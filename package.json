@@ -17,5 +17,9 @@
   "bugs": {
     "url": "https://github.com/kagrin97/React-for-beginner/issues"
   },
-  "homepage": "https://github.com/kagrin97/React-for-beginner#readme"
+  "homepage": "https://github.com/kagrin97/React-for-beginner#readme",
+  "dependencies": {
+    "http-proxy-middleware": "^2.0.6",
+    "react-router-dom": "^6.3.0"
+  }
 }

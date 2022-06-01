@@ -1,16 +1,23 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 
-const PORT = process.env.PORT || 3000;
+app.use(cors());
+const PORT = process.env.PORT || 4000;
+
+app.use((req, res) => {
+  res.header("Access-Control-Allow-Origin", "*"); // 모든 도메인 허용
+});
 
 app.use(express.static("build"));
+// build를 사용할려면 use를 사용해서 사용해야함(보안문제)
 
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/build/index.html");
 });
 
 app.listen(PORT, function () {
-  console.log("Express server");
+  console.log(`Express server${PORT}`);
 });
 
 // 서버를 실행하는 과정
