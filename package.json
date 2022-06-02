@@ -1,25 +1,11 @@
 {
-  "name": "react-for-beginner",
+  "name": "kang",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "heroku-prebuild": "cd client && npm ci && npm run build && mv build ../server",
-    "start": "cd server && npm ci && node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kagrin97/React-for-beginner.git"
-  },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kagrin97/React-for-beginner/issues"
-  },
-  "homepage": "https://github.com/kagrin97/React-for-beginner#readme",
-  "dependencies": {
-    "http-proxy-middleware": "^2.0.6",
-    "react-router-dom": "^6.3.0"
-  }
+  "license": "ISC"
 }
