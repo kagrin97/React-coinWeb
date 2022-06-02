@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./Home.css";
 
 function Home() {
   const [coins, setCoins] = useState([]);
@@ -18,50 +19,59 @@ function Home() {
   }, []);
   return (
     <div>
-      <h2>암호 화폐</h2>
-      <div>
-        <span>순위</span>
-        <span>종목</span>
-        <span>기호</span>
-        <span>가격 KRW</span>
-        <span>총 시가</span>
-        <span>거래량 24h</span>
-        <span>변동 24h</span>
-        <span>변동 7d</span>
-      </div>
+      <div className="title">암호 화폐 50순위</div>
 
-      <div>
-        {loading ? (
-          <div>
-            <h1> Coin is running......</h1>
-          </div>
-        ) : (
-          <div>
-            {coins.map((coin, index) => (
-              <tr key={index}>
-                <td>{coin.rank}</td>
-
-                <Link to={`/detail/${index + 1}`}>{coin.name}</Link>
-
-                <td>{coin.symbol}</td>
-                <td>
-                  {Number(coin.quotes.KRW.price.toFixed(0)).toLocaleString(
-                    "en"
-                  )}
-                </td>
-                <td>
-                  {(coin.quotes.KRW.market_cap / 1000000000000).toFixed(2)}T
-                </td>
-                <td>
-                  {(coin.quotes.KRW.volume_24h / 1000000000000).toFixed(2)}T
-                </td>
-                <td>{coin.quotes.KRW.percent_change_24h.toFixed(2)}%</td>
-                <td>{coin.quotes.KRW.percent_change_7d.toFixed(2)}%</td>
+      {loading ? (
+        <div>
+          <h1> Coin is running......</h1>
+        </div>
+      ) : (
+        <table>
+          <table className="sub__title">
+            <thead>
+              <tr>
+                <th>순위</th>
+                <th>종목</th>
+                <th>기호</th>
+                <th>가격 KRW</th>
+                <th>총 시가</th>
+                <th>거래량 24h</th>
+                <th>변동 24h</th>
+                <th>변동 7d</th>
               </tr>
+            </thead>
+          </table>
+
+          <table className="coins">
+            {coins.map((coin, index) => (
+              <thead>
+                <tr key={index} className="coin">
+                  <th>{coin.rank}</th>
+                  <th className="link__th">
+                    <Link className="link" to={`/detail/${index + 1}`}>
+                      {coin.name}
+                    </Link>
+                  </th>
+                  <th>{coin.symbol}</th>
+                  <th>
+                    {Number(coin.quotes.KRW.price.toFixed(0)).toLocaleString(
+                      "en"
+                    )}
+                  </th>
+                  <th>
+                    {(coin.quotes.KRW.market_cap / 1000000000000).toFixed(2)}T
+                  </th>
+                  <th>
+                    {(coin.quotes.KRW.volume_24h / 1000000000000).toFixed(2)}T
+                  </th>
+                  <th>{coin.quotes.KRW.percent_change_24h.toFixed(2)}%</th>
+                  <th>{coin.quotes.KRW.percent_change_7d.toFixed(2)}%</th>
+                </tr>
+              </thead>
             ))}
-          </div>
-        )}
-      </div>
+          </table>
+        </table>
+      )}
     </div>
   );
 }

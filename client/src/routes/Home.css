@@ -1,0 +1,42 @@
+.title {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 50px;
+  padding: 30px;
+  color: white;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+table {
+  width: 80%;
+  margin: 0 auto;
+  display: table;
+  table-layout: fixed;
+  background-color: aliceblue;
+  border-radius: 15px;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+}
+
+.sub__title {
+  border-bottom: 4px solid #15363f;
+  border-radius: 0;
+  font-size: 20px;
+}
+
+.link {
+  text-decoration-line: none;
+  padding: 0 10px;
+  color: wheat;
+}
+
+.link__th {
+  background-color: #f37802;
+  border-radius: 15px;
+}
