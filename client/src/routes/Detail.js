@@ -1,7 +1,7 @@
-import React, { useRef, useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { Line } from "react-chartjs-2";
-import Chart from "chart.js/auto";
+import "./Detail.css";
 
 function Detail() {
   let { id } = useParams();

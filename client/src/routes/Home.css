@@ -1,3 +1,11 @@
+.root__div {
+  display: flex;
+}
+
+.titles {
+  text-align: center;
+}
+
 .title {
   display: flex;
   flex-direction: column;
@@ -5,29 +13,45 @@
   margin-top: 50px;
   padding: 30px;
   color: white;
-  font-size: 40px;
+  font-size: 2.5vw;
   font-weight: 700;
 }
 
+.img {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  margin: auto;
+}
+
+.loading {
+  color: #f7f9fa;
+  font-size: 3vw;
+}
+
 table {
-  width: 80%;
-  margin: 0 auto;
+  width: 75%;
+  margin: 30px auto;
   display: table;
   table-layout: fixed;
-  background-color: aliceblue;
+  background-color: #f7f9fa;
   border-radius: 15px;
+  font-size: 1vw;
 }
 
 th,
 td {
   padding: 10px;
   text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .sub__title {
   border-bottom: 4px solid #15363f;
   border-radius: 0;
-  font-size: 20px;
+  font-size: 1.1vw;
 }
 
 .link {
@@ -39,4 +63,12 @@ td {
 .link__th {
   background-color: #f37802;
   border-radius: 15px;
+}
+
+.red {
+  color: red;
+}
+
+.blue {
+  color: blue;
 }

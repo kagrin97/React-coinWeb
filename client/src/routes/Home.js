@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import imgCoin from "./bitcoin.png";
 import "./Home.css";
 
 function Home() {
@@ -18,11 +19,13 @@ function Home() {
     getFestivals();
   }, []);
   return (
-    <div>
-      <div className="title">암호 화폐 50순위</div>
-
+    <div className="root__div">
+      <div className="titles">
+        <div className="title">암호 화폐 50위</div>
+        <img className="img" src={imgCoin}></img>
+      </div>
       {loading ? (
-        <div>
+        <div className="loading">
           <h1> Coin is running......</h1>
         </div>
       ) : (
@@ -57,6 +60,7 @@ function Home() {
                     {Number(coin.quotes.KRW.price.toFixed(0)).toLocaleString(
                       "en"
                     )}
+                    ₩
                   </th>
                   <th>
                     {(coin.quotes.KRW.market_cap / 1000000000000).toFixed(2)}T
@@ -64,8 +68,26 @@ function Home() {
                   <th>
                     {(coin.quotes.KRW.volume_24h / 1000000000000).toFixed(2)}T
                   </th>
-                  <th>{coin.quotes.KRW.percent_change_24h.toFixed(2)}%</th>
-                  <th>{coin.quotes.KRW.percent_change_7d.toFixed(2)}%</th>
+
+                  {coin.quotes.KRW.percent_change_24h > 0 ? (
+                    <th className="red">
+                      {coin.quotes.KRW.percent_change_24h.toFixed(2)}%
+                    </th>
+                  ) : (
+                    <th className="blue">
+                      {coin.quotes.KRW.percent_change_24h.toFixed(2)}%
+                    </th>
+                  )}
+
+                  {coin.quotes.KRW.percent_change_7d > 0 ? (
+                    <th className="red">
+                      {coin.quotes.KRW.percent_change_7d.toFixed(2)}%
+                    </th>
+                  ) : (
+                    <th className="blue">
+                      {coin.quotes.KRW.percent_change_7d.toFixed(2)}%
+                    </th>
+                  )}
                 </tr>
               </thead>
             ))}
