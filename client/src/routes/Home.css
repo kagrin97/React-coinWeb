@@ -18,10 +18,19 @@
 }
 
 .img {
-  width: 200px;
-  height: 200px;
+  width: 10vw;
+  height: 10vw;
   display: flex;
-  margin: auto;
+  margin: 20px auto;
+}
+
+.eth {
+  width: 8vw;
+  height: 14vw;
+}
+
+.doge {
+  width: 15vw;
 }
 
 .loading {

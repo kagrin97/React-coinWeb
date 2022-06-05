@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import imgCoin from "./bitcoin.png";
+import bitCoin from "./bitcoin.png";
+import eth from "./eth.png";
+import usdt from "./usdt.png";
+import doge from "./doge.png";
 import "./Home.css";
 
 function Home() {
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const getFestivals = async () => {
+  const getCoins = async () => {
     const json = await (
       await fetch(`https://api.coinpaprika.com/v1/tickers?quotes=KRW`)
     ).json();
@@ -16,13 +19,16 @@ function Home() {
   };
 
   useEffect(() => {
-    getFestivals();
+    getCoins();
   }, []);
   return (
     <div className="root__div">
       <div className="titles">
         <div className="title">암호 화폐 50위</div>
-        <img className="img" src={imgCoin}></img>
+        <img className="img" src={bitCoin}></img>
+        <img className="img eth" src={eth}></img>
+        <img className="img" src={usdt}></img>
+        <img className="img doge" src={doge}></img>
       </div>
       {loading ? (
         <div className="loading">
