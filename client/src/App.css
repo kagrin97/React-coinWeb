@@ -1,1 +1,8 @@
-
+.apple {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 200px 0;
+  color: white;
+}
