@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import { Line } from "react-chartjs-2";
 import Chart from "chart.js/auto";
+import "./Detail.css";
 
 function Detail() {
   let { id } = useParams();
@@ -63,18 +64,20 @@ function Detail() {
 
   return (
     <div>
-      <div>
+      <div className="info">
         {coins.map((coin, index) => (
-          <div key={index}>
-            <div>순위: {coin.rank}</div>
-            <div>코인 이름: {coin.name}</div>
-            <div>심볼: {coin.symbol}</div>
-            <div>현재 가격(KRW): {coin.quotes.KRW.price}</div>
+          <div>
+            <div key={index} className="info__all">
+              <div>{coin.rank}위</div>
+              <div>{coin.name}</div>
+              <div>{coin.symbol}</div>
+              <div>KRW: {coin.quotes.KRW.price.toFixed(2)}원</div>
+            </div>
           </div>
         ))}
       </div>
 
-      <div>
+      <div className="chart">
         <Line data={data} />
       </div>
     </div>

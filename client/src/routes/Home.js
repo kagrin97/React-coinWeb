@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import bitCoin from "./bitcoin.png";
-import eth from "./eth.png";
-import usdt from "./usdt.png";
-import doge from "./doge.png";
+import bitCoin from "./img/bitcoin.png";
+import eth from "./img/eth.png";
+import usdt from "./img/usdt.png";
+import doge from "./img/doge.png";
 import "./Home.css";
 
 function Home() {

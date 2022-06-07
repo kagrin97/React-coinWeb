@@ -1,0 +1,22 @@
+.info {
+  background-color: #dbdbdb;
+  width: 70%;
+  margin: 30px auto;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.info__all {
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+  padding: 3% 0;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+.chart {
+  background-color: #dbdbdb;
+  width: 70%;
+  margin: 30px auto;
+}
