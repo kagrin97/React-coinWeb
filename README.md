@@ -4,6 +4,8 @@
  
 ![1](https://user-images.githubusercontent.com/75124028/172612493-705f1173-7241-4e76-801d-ec87e27bc69e.gif)
 
+사용한 기술: html+css+js, express, heroku, chart.js
+
 기능
 
 1. 코인파프리카 API를 이용해서 1위부터 50위까지 가격과 변동되는 가격(올라가면 빨간색 내려가면 파란색)
