@@ -1,10 +1,22 @@
-<h2>Cryptocurrency website</h2>
- 
-<h4>주소</h4>
+<h2>암호화폐 실시간 랭킹을 보여주는 웹</h2>
 
-<div>
- <span>프론트 => 리액트, 백엔드 => express, 서버 => heroku</span>
-</div>
-<div>
- <span>코인 API를 이용해서 50위까지 순위를 나타내고 코인 이름을 클릭하면 시세변동률을 선 그래프로 나타내줍니다</span>
-</div>
+ https://react-coinweb.herokuapp.com/
+ 
+![1](https://user-images.githubusercontent.com/75124028/172612493-705f1173-7241-4e76-801d-ec87e27bc69e.gif)
+
+사용한 기술: html+css+js, express, heroku, chart.js
+
+기능
+
+1. 코인파프리카 API를 이용해서 1위부터 50위까지 가격과 변동되는 가격(올라가면 빨간색 내려가면 파란색)
+2. 코인 이름을 클릭하면 코인의 1년전부터 지금 까지의 코인 가격 변동률을 chartJS를 이용해 선 그래프로 표현합니다
+
+문제점
+
+1. chartJS를 이용해서 JSON을 가져와 변수에 저장할떄 window.@#$에 따로 저장을하는 비효율적인 방법을 사용
+2. 처음엔 공공데이터를 가져올려 했지만 cors에 막혀서 여러 방법을 하였지만 실패
+  
+2번문제 해결을 위한시도
+
+1. package.js 파일에 프록시 주소를 추가 했지만 실패
+2. midleware라는 패키지를 사용해 프록시를 경유할려 하였지만 실패(이유를 모르겠네요)
